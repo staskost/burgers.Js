@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <title>Burger Shop</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div class="card-action">
+          <h5 id="task-title">Burgers</h5>
+          <ul id="x" class="collection lista">
+            <li class="collection-item">
+              Hamburger (Beef,tomato,iceburg,ketchup,mustard) 5.0$
+              <button id="btn" type="button" class="secondary-content extra" data-price=5.0 data-name=Hamburger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Cheeseburger(Beef,tomato,iceburg,cheese,honey mustard) 6.0$
+              <button id="btn" type="button" class="secondary-content extra" data-price=6.0 data-name=Cheeseburger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Vegan Burger4.0$
+              <button type="button" class="secondary-content extra" data-price=4.0 data-name=VeganBurger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item" id="tuna">
+              Tuna Burger 6.5$
+              <button type="button" class="secondary-content extra" data-price=6.5 data-name=TunaBurger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Mushroom Burger 7.0$
+              <button type="button" class="secondary-content extra" data-price=7.0 data-name=MushroomBurger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Deluxe Burger 9.5$
+              <button type="button" class="secondary-content extra" data-price=9.5 data-name=DeluxeBurger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Black Angus Burger 12.5$
+              <button type="button" class="secondary-content extra" data-price=12.5 data-name=BlackAngusBurger>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div>
+      Quantity:<input id = 'num' type="number" name="quantity" min="1" value="1">
+    </div> -->
+
+  <div class="modal fade" id="extrasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:grey;-webkit-text-fill-color:honeydew">
+          <h5 class="modal-title" id="exampleModalLabel">Extras</h5>
+          <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <p id="xx"></p>
+          </div>
+          <div>
+            <h6>Your choice is:</h6>
+            <p id="nn"></p>
+          </div>
+          <ul class="collection lista">
+            <li class="collection-item">
+              Onion Rings 2.0
+              <button type="button" class="secondary-content xtr" data-price=2 data-name=OnionRings>
+                <i class="fa fa-remove"></i>
+              </button>
+              <button type="button" class="secondary-content extra" data-price=2 data-name=OnionRings>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Truffle Mayo 1.0$
+              <button type="button" class="secondary-content xtr" data-price=1 data-name="Truffle Mayo">
+                <i class="fa fa-remove"></i>
+              </button>
+              <button type="button" class="secondary-content extra" data-price=1 data-name="Truffle Mayo">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Extra Cheese 1.0
+              <button type="button" class="secondary-content xtr" data-price=1 data-name="Extra Cheese">
+                <i class="fa fa-remove"></i>
+              </button>
+              <button type="button" class="secondary-content extra" data-price=1 data-name="Extra Cheese">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Bacon 1.5
+              <button type="button" class="secondary-content xtr" data-price=1.5 data-name=Bacon>
+                <i class="fa fa-remove"></i>
+              </button>
+              <button type="button" class="secondary-content extra" data-price=1.5 data-name="Bacon">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+            <li class="collection-item">
+              Soda 2.0
+              <button type="button" class="secondary-content xtr " data-price=2 data-name=Soda>
+                <i class="fa fa-remove"></i>
+              </button>
+              <button type="button" class="secondary-content extra" data-price=2 data-name=Soda>
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </li>
+          </ul>
+          <div>
+            <button id="remove" type="button" class="btn btn-warning btn-sm">Remove</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="clear" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="checkoutModalButton" type="button" class="btn btn-success" data-name=arrNames data-total=sum>Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="orderConfirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Thank You</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your Total is:
+          <h2 class="message-text"></h2>
+          Your Choice is:
+          <h5 class="extra"></h5>
+        </div>
+        <div class="modal-footer">
+          <button id="ok" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- <script src="app.js"></script> -->
+  <script>
+    let burgerPrice = null;
+    let extra = null;
+    let arrPrice = [];
+    let total = null;
+    let sum = null;
+    let arrNames = [];
+    let extraName = null;
+    let newArr = [];
+    let arr = [];
+
+    $(document).ready(() => {
+      $(".lista").click((e) => {
+        if (e.target.classList.contains("extra")) {
+          let modal = $('#extrasModal')
+          modal.modal('show');
+          let btn = $(e.target);
+          let price = btn.data('price');
+          burgerPrice = price;
+          let name = btn.data('name');
+          extraName = name;
+          arrNames.push(extraName);
+          arr = arrNames.join(', ');
+          // console.log(newArr);
+          arrPrice.push(burgerPrice);
+          arrPrice = arrPrice.map(Number);
+          console.log(arrPrice);
+          console.log(arrPrice);
+          sum = arrPrice.reduce((partial_sum, a) => partial_sum + a);
+          let x = document.getElementById("xx");
+          let n = document.getElementById("nn");
+          x.innerHTML = "Your total is: " + sum + " $";
+          n.innerHTML = arr;
+        }
+        if (e.target.classList.contains("xtr")) {
+          console.log(arrPrice);
+          let btn = $(e.target);
+          let price = btn.data('price');
+          let name = btn.data('name');
+          console.log(price);
+          let y = arrPrice.indexOf(price);
+          let z = arrNames.indexOf(name);
+          console.log(y);
+          console.log(z);
+          if (z > -1 && y > -1) {
+            arrPrice.splice(y, 1);
+            arrNames.splice(z, 1);
+            console.log(arrNames);
+            console.log(arrPrice);
+            sum = arrPrice.reduce((partial_sum, a) => partial_sum + a);
+            let x = document.getElementById("xx");
+            let n = document.getElementById("nn");
+            x.innerHTML = "Your total is: " + sum + " $";
+            arr = arrNames.join(', ');
+            n.innerHTML = arr;
+          }
+        }
+      });
+      $("#clear").click((e) => {
+        arrPrice = [];
+        arrNames = [];
+      });
+
+      $("#close").click((e) => {
+        arrPrice = [];
+        arrNames = [];
+      });
+
+      $("#remove").click((e) => {
+        let popped = arrPrice.pop();
+        sum = sum - popped;
+        arrNames.pop();
+        newArr = arrNames.join(',').replace(/,/g, '+').split();
+        console.log(arrNames);
+        let x = document.getElementById("xx");
+        x.innerHTML = "Your total is: " + sum + " $";
+        let n = document.getElementById("nn");
+        n.innerHTML = newArr;
+        if (arrPrice.length < 1) {
+          let modal = $('#extrasModal');
+          modal.modal('hide');
+          arrNames = [];
+          console.log(arrNames);
+        }
+      });
+      // $("#rem").click((e) => {
+      //   let btn = $(e.target);
+      //   let price = btn.data('price');
+      //   sum = sum-price;
+      //   let x = document.getElementById("xx");
+      //   // let num = document.getElementById("num").value;
+      //   x.innerHTML = "Your total is: " + sum + " $";
+      // });
+      $("#checkoutModalButton").click((e) => {
+
+        let modal = $("#orderConfirmation");
+        newArr = arrNames.join(',').replace(/,/g, '+').split();
+        modal.find('.message-text').text(sum + " $");
+        modal.find('.extra').text(newArr);
+        modal.modal('show');
+      });
+
+      $("#ok").click((e) => {
+        arrPrice = [];
+        let modal = $("#extrasModal");
+        modal.modal('hide');
+        arrNames = [];
+      });
+    });
+  </script>
+</body>
+
+</html>
